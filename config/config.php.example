@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'database' => [
+        'name' => 'YOU_DATABASE_HERE',
+        'host' => '127.0.0.1',
+        'username' => 'YOU_USER_HERE',
+        'passwdord' => 'YOU_PASSWORD_HERE',
+        'driver' => 'mysql',
+    ]
+];
