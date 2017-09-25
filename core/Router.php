@@ -1,33 +1,48 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sergi
- * Date: 22/09/17
- * Time: 16:27
- */
 
 class Router
 {
 
-    protected $routes;
+    protected $routes = [
+
+        'GET' => [],
+        'POST' => []
+
+    ];
 
     public function define($routes){
+
         $this->routes = $routes;
+
     }
 
+    public function get($uri,$file){
 
-    public static function load($file)
-    {
+        $this->routes['GET'][$uri] = $file;
+
+    }
+
+    public function post($uri,$file){
+
+        $this->routes['POST'][$uri] = $file;
+
+    }
+
+    public static function load($file){
 
         $router = new static;
-        $router->define(require $file);
+        require $file;
         return $router;
+
     }
 
-    public function direct($uri){
+    public function direct($uri,$requestType){
 
-//      array_key_exists($this->toutes,$uri);
-        require $this->toutes[$uri];
+        $uri = trim($uri,'/');
+        if (! array_key_exists($uri,$this->routes[$requestType])) throw new Exception('No route found');
+
+        require $this->routes[$requestType][$uri];
+
     }
 
 }

@@ -1,14 +1,14 @@
 <?php
 
+
 require 'core/bootstrap.php';
 
 
-$uri = "";
+//$_REQUEST = new Request();
+//$uri = $request->uri();
 
-// Pistes uri dinamica
-//dd(trim('/about/','/'));
-//dd($_SERVER);
-
+$uri = Request::uri();
+$type = Request::type();
 // FC -> Front Controller
-Router::load('app/routes.php')->direct($uri);
+Router::load('app/routes.php')->direct($uri, $type);
 
