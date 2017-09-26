@@ -1,5 +1,8 @@
 <?php
 
+namespace Baucellsframework\Database;
+
+use PDO;
 
 class QueryBuilder
 {

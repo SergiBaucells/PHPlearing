@@ -1,5 +1,9 @@
 <?php
 
+namespace Baucellsframework\Database;
+
+use PDO;
+use PDOException;
 
 class Connection{
 

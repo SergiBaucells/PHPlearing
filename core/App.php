@@ -1,5 +1,8 @@
 <?php
 
+namespace Baucellsframework;
+
+
 class App{
 
     protected static $registry = [];

@@ -1,6 +1,9 @@
 <?php
 
 
+use Baucellsframework\Request;
+use Baucellsframework\Router;
+
 require 'core/bootstrap.php';
 
 // FC -> Front Controller

@@ -1,5 +1,7 @@
 <?php
 
+namespace Baucellsframework;
+
 class Request
 {
     public static function uri()

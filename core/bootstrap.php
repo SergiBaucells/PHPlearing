@@ -1,5 +1,9 @@
 <?php
 
+use Baucellsframework\App;
+use Baucellsframework\Database\Connection;
+use Baucellsframework\Database\QueryBuilder;
+
 $config = require 'config/config.php';
 
 require 'core/lib/functions.php';
