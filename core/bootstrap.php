@@ -1,13 +1,10 @@
 <?php
 
 $config = require 'config/config.php';
+
 require 'core/lib/functions.php';
-require 'core/database/Connection.php';
-require 'core/database/QueryBuilder.php';
-require 'core/Request.php';
+require 'vendor/autoload.php';
 
-
-require 'core/Router.php';
-
+// PHP -> AUTOLOAD -> En un sol require la resta de coses es carregen automaticament
 $pdo = Connection::connect($config);
-$query = new QueryBuilder($pdo);
+App::bind('database', new QueryBuilder($pdo));

@@ -1,10 +1,5 @@
 <?php
 
-/**
- *
- * Class QueryBuilder
- *
- */
 
 class QueryBuilder
 {
@@ -30,8 +25,25 @@ class QueryBuilder
      * @param $table
      * @param $filters
      */
-    public function where( $table, $filters)
-    {
+    public function where( $table, $filters){
+
+
+
+    }
+
+    public function insert($table,$fields){
+
+        $columns = implode(',',array_keys($fields));
+        $values = ":" . implode(', :',array_keys($fields));
+        $sql = "INSERT INTO $table ($columns) VALUES ('$values')";
+        dd($sql);
+
+        try{
+            $statement = $this->pdo->prepare("$sql");
+            $statement->execute();
+        }catch (\Exception $e){
+            die('Algo ha passat al fer el insert!');
+        }
 
     }
 

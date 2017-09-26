@@ -1,0 +1,16 @@
+{
+    "name": "sergi/ph-plearing",
+    "authors": [
+        {
+            "name": "SergiBaucells",
+            "email": "sergibaucells@iesebre.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "./"
+      ]
+
+    }
+}

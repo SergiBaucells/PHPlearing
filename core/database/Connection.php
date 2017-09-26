@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Class Connection
- */
-
 
 class Connection{
 
